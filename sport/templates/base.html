@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+  {% if request.path == "/"%}
+  <title>Palsbet | Best online sports and football prediction</title>
+  {% else%}
+  <title>Palsbet |
+  {% with name=request.path %} {% endwith %} | Best online sports and football prediction</title>
+  {% endif %}
+  <meta name="description" content="Best prediction football tips and games">
+
+  <meta name="keywords" content="Best Football prediction, Sky sports predictions, Best online betting picks, Sure win prediction, Direct win prediction, Free soccer prediction for today, Premier league Football tips, Serie A football tips, La liga football tips, League 1 football tips, Sportpesa predictions, Odibet prediction, Betika prediction, Mozzart prediction, Football EXPERTS Predictions, Daily Free Betting Tips, Professional Betting Tipsters, Sports predictions, EPL Tips | Best Bets, EPL Predictions, Jackpot prediction, Jackpot tips">
+
+  <link rel="canonical" href="{{request.path}}">
+
+  <link rel="home" href="{% url 'home'%}">
+
+  <title>
+
+    {% block title %}
+
+    {% endblock %}
+
+  </title>
+
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'static/css/styles.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<style>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+body {
+   font-family: Arial !important;
+   font-size: 1em !important;
+}
+/* Style all font awesome icons */
+.fab {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fab:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+</style>
+
+</head>
+<body>
+
+{% include "navbar.html" %}
+
+  {% block content %}
+
+  {% endblock %}
+
+{% include "footer.html" %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/5ae55e205f7cdf4f0533b536/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+</body>
+</html>

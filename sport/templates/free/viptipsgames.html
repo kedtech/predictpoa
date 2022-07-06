@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+
+Palsbet.com - Best Football Prediction in the world vip Tips Games
+
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+{% if request.user.profile.state == 'vip' %}
+
+{% include "loading_first_tips.html" %}
+
+{% include "loading_previous_tips.html" %}
+
+{% else %}
+
+{% include "free/unsubscriped.html" %}
+
+{% endif %}
+
+{% else %}
+
+  <p>You are not logged in</p>
+
+  <a href="{% url 'login' %}">login</a>
+
+{% endif %}
+
+
+{% endblock %}
