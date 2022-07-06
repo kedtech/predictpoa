@@ -2,21 +2,6 @@
 {% load static %}
 <html lang="en">
 <head>
-
-  {% if request.path == "/"%}
-  <title>Palsbet | Best online sports and football prediction</title>
-  {% else%}
-  <title>Palsbet |
-  {% with name=request.path %} {% endwith %} | Best online sports and football prediction</title>
-  {% endif %}
-  <meta name="description" content="Best prediction football tips and games">
-
-  <meta name="keywords" content="Best Football prediction, Sky sports predictions, Best online betting picks, Sure win prediction, Direct win prediction, Free soccer prediction for today, Premier league Football tips, Serie A football tips, La liga football tips, League 1 football tips, Sportpesa predictions, Odibet prediction, Betika prediction, Mozzart prediction, Football EXPERTS Predictions, Daily Free Betting Tips, Professional Betting Tipsters, Sports predictions, EPL Tips | Best Bets, EPL Predictions, Jackpot prediction, Jackpot tips">
-
-  <link rel="canonical" href="{{request.path}}">
-
-  <link rel="home" href="{% url 'home'%}">
-
   <title>
 
     {% block title %}

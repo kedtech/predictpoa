@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 's7eru^)1y(kwflnvbffp-iy@@!h7^g
 #DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['predictpoaa.herokuapp.com','www.predictpoa.com']
+ALLOWED_HOSTS = ['palsport.herokuapp.com','www.palsbet.com','www.palsbet.co.ke']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'sport',
 ]
@@ -144,4 +143,4 @@ if 'DATABASE_URL' in os.environ:
 #admin.site.site_header = 'Palsbet Admin Panel'
 #admin.site.site_title = 'Palsbet Admin Panel'
 
-ADMINS = (('Denis', 'predictpoa526@gmail.com'),)
+ADMINS = (('Keneth', 'palsbet1@gmail.com'),)

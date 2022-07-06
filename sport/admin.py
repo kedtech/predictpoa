@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Ticket, FreeTipsGame, vipTipsGame, SingleBet
+from . models import Ticket, FreeTipsGame, vipTipsGame, RollTipsGame
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
@@ -33,8 +33,8 @@ class CustomUserAdmin(UserAdmin):
             return list()
         return super(CustomUserAdmin, self).get_inline_instances(request, obj)
 
-admin.site.site_header = 'Predictpoa Admin Panel'
-admin.site.site_title = 'Predictpoa Admin Panel'
+admin.site.site_header = 'Palsbet Admin Panel'
+admin.site.site_title = 'Palsbet Admin Panel'
 
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
@@ -42,4 +42,4 @@ admin.site.register(User, CustomUserAdmin)
 admin.site.register(Ticket)
 admin.site.register(FreeTipsGame)
 admin.site.register(vipTipsGame)
-admin.site.register(SingleBet)
+admin.site.register(RollTipsGame)

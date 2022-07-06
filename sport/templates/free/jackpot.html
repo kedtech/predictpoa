@@ -4,85 +4,77 @@
 
 {% block title %}
 
-Palsbet.com - Vip Payment Methods
+Palsbet.com - Best Football Prediction in the world Results Fpr Jackpot $ Mega Jackpot
 
 {% endblock %}
 
 {% block content %}
 
 <div class="jumbotron">
-<h5 class="text-center"> We analyze and provide JACKPOTS of various Betting Companies. Contact ADMIN +254798265307 for mor INFO  </h5>
+<h5 class="text-center">MegaJackpot & Jackpot Analysis <i class="fas fa-phone-square"></i> +254779066998</h5>
 </div>
-<div class="container">
-<div class="row">
-<div class="col-md-3" align = "center">
-<div class="card border-success mb-3" >
+<!-- table for today's tips -->
+             {% regroup home_page_teams by ticket as ticket_list %}
 
-  <div class="card-header bg-info border-success" align = "center">SportPesa</b></div>
+                 {% for ticket in ticket_list %}
 
-  <div class="card-body text-success" align = "center">
-    <hr>
-    <p>
-      We analyze both Mid-Week and Mega Jackpots
-    </p>
+                 {% if forloop.first %}
 
-  </div>
+                     <li>{{ ticket.grouper }}
+                         <ul>
 
-  <div class="card-footer bg-transparent border-success" align = "center">Palsbet Community<b></div>
-</div>
-</div>
+ <div style="overflow-x:auto;">
+<table border="2" cellpadding = "5">
 
-<div class="col-md-3" align = "center">
-<div class="card border-success mb-3" >
+<tr style='background-color: indigo'>
+<th style='color: white'>Country</th>
+<th style='color: white'>Teams</th>
+<th style='color: white'>Scores</th>
+<th style='color: white'>Prediction</th>
+<th style='color: white'>Odds</th>
+<th style='color: white'>Status</th>
+</tr>
 
-  <div class="card-header bg-info border-success" align = "center">Betika</b></div>
+                         {% for item in ticket.list %}
 
-  <div class="card-body text-success" align = "center">
-    <hr>
-    <p>
-      We analyze Sababisha, Mid-Week and Grand Jackpots
-    </p>
+                         <tr>
+                             <td style='background-color: plum;' >{{ item.country }}</td>
 
-  </div>
+                             <td >{{ item.home_team }}  <i class="far fa-futbol"></i>  {{ item.away_team}}</td>
 
-  <div class="card-footer bg-transparent border-success" align = "center">Palsbet Community<b></div>
-</div>
-</div>
+                             <td >{{ item.prediction}}</td>
 
-<div class="col-md-3" align = "center">
-<div class="card border-success mb-3" >
+                             <td style='background-color: plum;'>{{ item.odds}}</td>
 
-  <div class="card-header bg-info border-success" align = "center">Odibet</b></div>
+                             {% if item.status == 'Lost' %}
 
-  <div class="card-body text-success" align = "center">
-    <hr>
-    <p>
-      We analyze OMOKA daily, Mid-week and Mega Jackpots
-    </p>
+                             <td style='background-color: #FF5733;'>{{ item.status}}</td>
 
-  </div>
+                             {% elif item.status == 'Won' %}
 
-  <div class="card-footer bg-transparent border-success" align = "center">Palsbet Community<b></div>
-</div>
-</div>
+                             <td style='background-color: Limegreen;' >{{ item.status}}</td>
 
-<div class="col-md-3" align = "center">
-<div class="card border-success mb-3" >
+                             {% else %}
 
-  <div class="card-header bg-info border-success" align = "center">Mozzart Bet</b></div>
+                             <td >{{ item.status}}</td>
 
-  <div class="card-body text-success" align = "center">
-    <hr>
-    <p>
-      We analyze both Mid-Week and Mega Jackpots
-    </p>
+                             {% endif %}
 
-  </div>
 
-  <div class="card-footer bg-transparent border-success" align = "center">Palsbet Community<b></div>
-</div>
-</div>
+                         </tr>
 
-</div>
-</div>
+                         {% endfor %}
+                       </table>
+                     </div>
+                         </ul>
+                     </li>
+
+                  {%endif%}
+
+                 {% endfor %}
+
+             </ul>
+<!-- End of today's tips table -->
+
+
 {% endblock %}
