@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 's7eru^)1y(kwflnvbffp-iy@@!h7^g
 #DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['predictpoaa.herokuapp.com']
+ALLOWED_HOSTS = ['predictpoaa.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -144,3 +144,8 @@ if 'DATABASE_URL' in os.environ:
 #admin.site.site_title = 'Palsbet Admin Panel'
 
 ADMINS = (('Deno', 'predictpoa526@gmail.com'),)
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
